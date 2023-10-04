@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Task-05</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="d-flex mx-auto mt-5 w-75 justify-content-center ">
+        <form class="needs-validation bg-secondary-subtle rounded-2  p-5" novalidate>
+            <table>
+                <tr>
+                    <td align="right"><label for="validationCustom01" class="form-label pe-4 fw-bold ">First
+                            Name</label></td>
+                    <td align="left" width="500px">
+                        <div class="input-group has-validation m-1">
+                            <span class="input-group-text " id="inputGroupPrepend01"><i class="fa fa-user"
+                                    aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="validationCustom01"
+                                aria-describedby="inputGroupPrepend01" placeholder="First name" required>
+                            <div class="invalid-feedback">
+                                Please supply your First Name
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationCustom02" class="form-label pe-4 fw-bold ">Last Name</label>
+                    </td>
+                    <td align="left">
+                        <div class="input-group has-validation m-1">
+                            <span class="input-group-text" id="inputGroupPrepend02"><i class="fa fa-user"
+                                    aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="validationCustom02"
+                                aria-describedby="inputGroupPrepend02" placeholder="Last name" required>
+                            <div class="invalid-feedback">
+                                Please supply your Last Name
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationEmail" class="form-label pe-4 fw-bold ">E-Mail</label></td>
+                    <td align="left">
+                        <div class="input-group has-validation m-1">
+                            <span class="input-group-text" id="inputGroupPrepend03"><i class="fa fa-envelope"
+                                    aria-hidden="true"></i></span>
+                            <input type="email" class="form-control" id="validationEmail"
+                                aria-describedby="inputGroupPrepend03" placeholder="E-Mail Address" required>
+                            <div class="invalid-feedback">
+                                Please supply your E-Mail Address
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationPhone" class="form-label pe-4 fw-bold ">Phone #</label></td>
+                    <td align="left">
+                        <div class="input-group has-validation m-1">
+                            <span class="input-group-text" id="inputGroupPrepend04"><i class="fa fa-phone"
+                                    aria-hidden="true"></i></span>
+                            <input type="number" class="form-control" id="validationPhone"
+                                aria-describedby="inputGroupPrepend04" placeholder="(+91) 12345-67890" required>
+                            <div class="invalid-feedback">
+                                Please supply your Phone Number
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationAddress" class="form-label pe-4 fw-bold ">Address</label>
+                    </td>
+                    <td align="left">
+                        <div class="input-group has-validation m-1">
+                            <span class="input-group-text" id="inputGroupPrepend05"><i class="fa fa-home"
+                                    aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="validationAddress"
+                                aria-describedby="inputGroupPrepend05" placeholder="Address" required>
+                            <div class="invalid-feedback">
+                                Please supply your Address
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationCity" class="form-label pe-4 fw-bold ">City</label></td>
+                    <td align="left">
+                        <div class="input-group has-validation m-1">
+                            <span class="input-group-text" id="inputGroupPrepend06"><i class="fa fa-home"
+                                    aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" id="validationCity"
+                                aria-describedby="inputGroupPrepend06" placeholder="City" required>
+                            <div class="invalid-feedback">
+                                Please supply your City
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationState" class="form-label pe-4 fw-bold ">State</label></td>
+                    <td align="left">
+                        <div class="input-group has-validation  m-1">
+                            <span class="input-group-text" id="inputGroupPrepend07"><i class="fa fa-list"
+                                    aria-hidden="true"></i></span>
+                            <select class="form-select" id="validationState" aria-describedby="inputGroupPrepend07"
+                                required>
+                                <option selected disabled value="">Please select your State</option>
+                                <option>Chennai</option>
+                                <option>Banglore</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select your State.
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationHost" class="form-label pe-4 fw-bold ">Do you have
+                            hosting?</label></td>
+                    <td align="left">
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input" id="validationHost1" name="radio-stacked"
+                                required>
+                            <label class="form-check-label" for="validationHost1">Yes</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input type="radio" class="form-check-input" id="validationHost2" name="radio-stacked"
+                                required>
+                            <label class="form-check-label" for="validationHost2">No</label>
+                            <div class="invalid-feedback">Please select one</div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right"><label for="validationDesc" class="form-label pe-4 fw-bold ">Project
+                            Description</label></td>
+                    <td align="left">
+                        <div class="input-group has-validation ">
+                            <span class="input-group-text" id="inputGroupPrepend08"><i class="fa fa-pencil"
+                                    aria-hidden="true"></i></span>
+                            <textarea class="form-control" id="validationTextarea" placeholder="Project Description"
+                                required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter a Project Description
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td align="center" colspan="2" >
+                            <button class="btn btn-warning mt-3  " type="submit">Send <i class="fa fa-telegram" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+            </table> 
+
+        </form>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+</body>
+
+</html>

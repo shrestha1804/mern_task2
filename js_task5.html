@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Task-05</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    
+    <style>
+        .formdesign {
+            font-size: 20px;
+        }
+
+        .formdesign input {
+            width: 50%;
+            padding: 12px 20px;
+            margin: 20px;
+            border-radius: 4px;
+            font-size: 15px;
+            
+        }
+
+        .formerror {
+            color: red;
+        }
+
+        .but {
+            font-size: 20px;
+            margin: 22px 20px;
+        }
+        .ed{
+            width: 1000px;
+        }
+        .msg-ht{
+            height:  100px;
+        }
+
+    </style>
+
+</head>
+
+<body class="d-flex justify-content-center mt-5 ">
+    <div class=" ed">
+        <form aciton="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+            <div class="formdesign" id="name">
+                Name: <input type="text" name="fname" class="ms-5" ><b><span class="formerror"> </span></b>
+            </div>
+    
+            <div class="formdesign" id="email">
+                Email: <input type="text" name="femail" class="ms-5" ><b><span class="formerror"> </span></b>
+            </div>
+
+            <div class="formdesign" id="web">
+                Website: <input type="text" name="fweb" class="ms-4" ><b><span class="formerror"> </span></b>
+            </div>
+
+            <div class="formdesign" id="msg">
+                Message: <input type="text" name="fmsg"  class="msg-ht" ><b><span class="formerror"> </span></b>
+            </div>
+    
+            <input class="but " type="submit" value="Submit">
+    
+        </form>
+    </div>
+</body>
+
+<script>
+
+    function clearErrors() {
+
+            errors = document.getElementsByClassName('formerror');
+            for (let item of errors) {
+                item.innerHTML = "";
+            }
+
+        }
+        function seterror(id, error) {
+            element = document.getElementById(id);
+            element.getElementsByClassName('formerror')[0].innerHTML = error;
+        }
+
+        function validateForm() {
+            var returnval = true;
+            clearErrors();
+            var name = document.forms['myForm']["fname"].value;
+
+            if (name.length == 0) {
+                seterror("name", "*This field is required");
+                returnval = false;
+            }
+
+            var email = document.forms['myForm']["femail"].value;
+            if (!email.includes('@')) {
+                seterror("email", "*A valid email address is required");
+                returnval = false;
+            }
+
+            var web = document.forms['myForm']["fweb"].value;
+            if (!web.includes('www.') && !web.includes('.com') ) {
+                seterror("web", "*A valid url is required");
+                returnval = false;
+            }
+
+            var msg = document.forms['myForm']["fmsg"].value;
+            if (msg.length == 0) {
+                seterror("msg", "*This field is required");
+                returnval = false;
+            }
+
+            return returnval;
+        }
+    
+</script>
+
+</html>

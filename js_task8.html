@@ -1,0 +1,272 @@
+<!-- Data Validation
+Data validation is the process of ensuring that user input is clean, correct, and useful.
+
+Typical validation tasks are:
+
+has the user filled in all required fields?
+has the user entered a valid date?
+has the user entered text in a numeric field?
+Most often, the purpose of data validation is to ensure correct user input.
+
+Validation can be defined by many different methods, and deployed in many different ways.
+
+Server side validation is performed by a web server, after input has been sent to the server.
+
+Client side validation is performed by a web browser, before input is sent to a web server. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Form Validation</title>
+    <style>
+        
+        body {
+            padding: 10px 50px;
+        }
+
+        .formdesign {
+            font-size: 20px;
+
+        }
+
+        .formdesign input {
+            width: 50%;
+            padding: 12px 20px;
+            border: 1px solid blue;
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        .formdesign1 input {
+            width: 50%;
+            height: 80px;
+            padding: 12px 20px;
+            border: 1px solid blue;
+            margin: 14px;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .formerror {
+            color: red;
+        }
+
+        .but {
+            border-radius: 15px;
+            width: 100px;
+            height: 35px;
+            font-size: 20px;
+            margin-left: 500px ;
+            margin-top: 20px;
+            background-color: red;
+            color: white;
+
+        }
+        #gen1{
+            font-size: 20px;
+            padding-right: 15px;
+        }
+        .eth{
+           margin-top: 15px;
+            margin-left: 560px;
+            
+        }
+        h1{
+            color: blue;
+            margin-left: 475px;
+        }
+        #body1{
+            border:1px black;
+            padding: 0%;
+            background-color: rgb(205, 233, 167);
+            
+        }
+        
+    </style>
+
+</head>
+
+<body id="body1">
+    
+    <h1>Registration Form</h1>
+    
+    <form aciton ="/myaction.php" name="myForm" onsubmit="return validateForm()" method="post">
+        <div class="formdesign" id="name">
+          First Name: <input type="text" name="fname" ><b><span class="formerror"> </span></b>
+        </div>
+        <div class="formdesign" id="names">
+           Last Name: <input type="text" name="lname" ><b><span class="formerror"> </span></b>
+        </div>
+        
+        <div class="formdesign" id="email">
+            Email: <input type="email" name="femail" ><b><span class="formerror"> </span></b>
+        </div>
+
+        <div class="formdesign" id="pass">
+            Password: <input type="password" name="fpass" ><b><span class="formerror"</span></b>
+        </div>
+        <div class="formdesign" id="cpass">
+            Re-enter Password: <input type="password" name="fcpass" ><b><span class="formerror"></span></b>
+        </div>
+
+       
+        
+        <table>
+            <tr>
+                <td rowspan="2" id="gen1">Gender: </td>
+                <td>
+                    <input type="radio" name="gender" value="male" id="gen"> Male
+                </td>
+            <tr>
+                <td>
+                <input type="radio" name="gender" value="female" id="gen"> Female
+            </td>
+            </tr>
+            </tr>
+        </table>
+    </div>
+    <div class="formdesign" id="age">
+        Age: <input type="number" name="fage" ><b><span class="formerror"></span></b>
+    </div>
+
+</div>
+<div class="formdesign" id="phone">
+    Phone: <input type="texta" name="fphone" ><b><span class="formerror"></span></b>
+</div>
+<div class="formdesign1" id="add">
+    Address: <input type="text" name="faddress" ><b><span class="formerror"> </span></b>
+ </div>
+ <div class="formdesign" id="state">
+    State <input type="text" name="fstate" ><b><span class="formerror"> </span></b>
+ </div> 
+ <div>
+ <table>
+    <td id="gen1">Country</td>
+            <td>
+                <select name="state">
+                    <option value="">Choose your country</option>
+                    <option value="India">India</option>
+                    <option value="Japan">Japan</option>
+                    <option value="Others">Others</option>
+                </select>
+            </td>
+ </table>
+</div>
+ <div>
+ <table>
+    <tr>
+        <td id="gen1" >Langauge Known</td>
+        <td>
+            <input type="radio" name="language" value="male">English 
+            <input type="radio" name="language" value="female">kannada 
+            <input type="radio" name="language" value="other">Hindi 
+            <input type="radio" name="language" value="other">language 
+        </td>
+    </tr>
+ </table>
+</div>
+<div>
+    <input type="checkbox" value="agree">Hereby I declare all the given details are true
+</div>
+<div>
+    <a class="eth" href="https://ethnus.com/">Log in to Ethnus website</a>
+</div>
+<div >
+    <button class="but">Register</button>
+</div>
+    </form>
+
+
+</body>
+<script >
+    function clearErrors(){
+
+errors = document.getElementsByClassName('formerror');
+for(let item of errors)
+{
+    item.innerHTML = "";
+}
+
+
+}
+function seterror(id, error){
+//sets error inside tag of id 
+element = document.getElementById(id);
+element.getElementsByClassName('formerror')[0].innerHTML = error;
+
+}
+
+function validateForm(){
+var returnval = true;
+clearErrors();
+
+//perform validation and if validation fails, set the value of returnval to false
+
+
+if (name.length == 0){
+    seterror("name", "POOR ");
+    returnval = false;
+}
+
+
+
+var email = document.forms['myForm']["femail"].value;
+if (email.length==0){
+    seterror("email", "POOR");
+    returnval = false;
+}
+
+
+
+var password = document.forms['myForm']["fpass"].value;
+    if (password.length < 6){
+
+        // Quiz: create a logic to allow only those passwords which contain atleast one letter, one number and one special character and one uppercase letter
+        seterror("pass", "POOR");
+        returnval = false;
+    }
+
+    var cpassword = document.forms['myForm']["fcpass"].value;
+    if (cpassword != password || cpassword.length==0){
+        seterror("cpass", "POOR OR MISMATCH");
+        returnval = false;
+    }
+
+    
+    var phone = document.forms['myForm']["fphone"].value;
+    if (phone.length == 0){
+        seterror("phone", "POOR");
+        returnval = false;
+    }
+    var age = document.forms['myForm']["fage"].value;
+    if (age.length == 0){
+        seterror("age", "POOR");
+        returnval = false;
+    }
+    var add = document.forms['myForm']["faddress"].value;
+    if (add.length == 0){
+        seterror("add", "POOR");
+        returnval = false;
+    }
+    var state = document.forms['myForm']["fstate"].value;
+    if (add.length == 0){
+        seterror("state", "POOR");
+        returnval = false;
+    }
+    
+   
+
+
+
+return returnval;
+}
+
+
+</script>
+
+</html>

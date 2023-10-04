@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alphabetical Order</title>
+</head>
+<body>
+    <h1>Alphabetical Order</h1>
+    <label for="inputString">Enter a String: </label>
+    <input type="text" id="inputString">
+    <button id="orderButton">Order Alphabetically</button>
+    <p id="result"></p>
+
+    <script>
+        function orderStringAlphabetically() {
+            const inputString = document.getElementById("inputString").value;
+            
+            if (inputString === "") {
+                document.getElementById("result").textContent = "Please enter a string.";
+                return;
+            }
+        
+            const orderedString = inputString.split('').sort().join('');
+            document.getElementById("result").textContent = `Alphabetical Order: ${orderedString}`;
+        }
+        
+        // Add an event listener to the button
+        document.getElementById("orderButton").addEventListener("click", orderStringAlphabetically);
+        </script>
+</body>
+</html>
